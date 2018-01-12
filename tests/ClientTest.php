@@ -7,6 +7,7 @@ declare(strict_types=1);
  */
 namespace ValueFrame\Rest\Tests;
 
+use GuzzleHttp\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
 use ValueFrame\Rest\Client;
 use ValueFrame\Rest\Factory;
@@ -25,15 +26,17 @@ class ClientTest extends TestCase
 
     public function testThatGetClientUsesExpectedBaseUri(): void
     {
-        static::assertSame(
-            'https://psa.valueframe.com/rest/v2/resource',
-            $this->client->getClient()->getConfig('base_uri')
-        );
+        /** @var Uri $baseUri */
+        $baseUri = $this->client->getClient()->getConfig('base_uri');
+
+        static::assertSame('https', $baseUri->getScheme());
+        static::assertSame('psa.valueframe.com', $baseUri->getHost());
+        static::assertSame('/rest/v2/resource', $baseUri->getPath());
     }
 
     public function testThatGetOptionsAddsExpectedHeaders(): void
     {
-        $options = $this->client->getOptions();
+        $options = $this->client->getOptions()['headers'];
 
         static::assertArrayHasKey('X-VF-REST-USER', $options);
         static::assertArrayHasKey('X-VF-REST-TIMESTAMP', $options);
