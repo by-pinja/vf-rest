@@ -1,0 +1,49 @@
+language: php
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.sonar/cache
+
+git:
+  depth: 1
+
+services:
+  - mysql
+
+php:
+  - 7.1
+  - 7.2
+  - master
+  - nightly
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: master
+    - php: nightly
+  include:
+    - php: 7.1
+      env:
+        - USE_XDEBUG=false
+    - php: 7.2
+      env:
+        - USE_XDEBUG=false
+    - php: 7.1
+      env:
+        - COVERAGE=true
+
+install:
+  - composer install
+
+before_script:
+  - if [[ ${USE_XDEBUG} == false ]]; then phpenv config-rm xdebug.ini; fi
+  - php --version
+  - php ./vendor/bin/phpunit --version
+
+script:
+  - php ./vendor/bin/phpunit
+
+after_success:
+
+after_failure:
