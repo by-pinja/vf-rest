@@ -24,7 +24,7 @@ class Factory
      *
      * @return Client
      */
-    public static function build($customer, $token, $resource): Client
+    public static function build(string $customer, string $token, string $resource): Client
     {
         $client = (new Client())
             ->setCustomer($customer)

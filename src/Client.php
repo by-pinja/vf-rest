@@ -7,6 +7,7 @@ declare(strict_types = 1);
  */
 namespace ValueFrame\Rest;
 
+use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Promise;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
@@ -82,7 +83,7 @@ class Client
      *
      * @return Client
      */
-    public function setCustomer($customer): Client
+    public function setCustomer(string $customer): Client
     {
         $this->customer = $customer;
 
@@ -130,11 +131,11 @@ class Client
     }
 
     /**
-     * @return \GuzzleHttp\Client
+     * @return GuzzleClient
      */
-    private function getClient(): \GuzzleHttp\Client
+    private function getClient(): GuzzleClient
     {
-        return new \GuzzleHttp\Client([
+        return new GuzzleClient([
             'base_uri' => 'https://psa.valueframe.com/rest/v2/' . $this->getResource(),
         ]);
     }
@@ -146,9 +147,7 @@ class Client
      */
     private function getOptions(array $options = null): array
     {
-        $options = $options ?? [];
-
-        return \array_merge($this->getHeaders(), $options);
+        return \array_merge($this->getHeaders(), $options ?? []);
     }
 
     /**
