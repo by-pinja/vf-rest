@@ -21,11 +21,28 @@ Simple library for ValueFrame REST API.
 
 ## Installation
 
-todo
+The recommended way to install this libarary is with Composer. Composer is a dependency management 
+tool for PHP that allows you to declare the dependencies your project needs and installs them into 
+your project.
+
+```bash
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+```
+
+You can add this library as a dependency using following command:
+
+```bash
+composer require protacon/vf-rest
+```
+
+After installing, you need to require Composer's autoloader:
+
+```php
+require 'vendor/autoload.php';
+```
 
 ## Usage
-
-todo
 
 ## Authors
 
