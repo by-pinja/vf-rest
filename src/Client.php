@@ -133,7 +133,7 @@ class Client
     /**
      * @return GuzzleClient
      */
-    private function getClient(): GuzzleClient
+    public function getClient(): GuzzleClient
     {
         return new GuzzleClient([
             'base_uri' => 'https://psa.valueframe.com/rest/v2/' . $this->getResource(),
@@ -145,7 +145,7 @@ class Client
      *
      * @return array
      */
-    private function getOptions(array $options = null): array
+    public function getOptions(array $options = null): array
     {
         return \array_merge($this->getHeaders(), $options ?? []);
     }
