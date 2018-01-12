@@ -62,9 +62,9 @@ declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
 
-$customer = 'asiakas';
-$token = 'siirtoavain';
-$resource = 'tehtavan_kommentti';
+$customer = 'asiakas';            // X-VF-REST-USER , see docs
+$token    = 'siirtoavain';        // {SIIRTOAVAIN} , see docs
+$resource = 'tehtavan_kommentti'; // {REST_resurssi} , see docs
 
 $client = \ValueFrame\Rest\Factory::build($customer, $token, $resource);
 
