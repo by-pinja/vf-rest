@@ -24,7 +24,7 @@ class ClientTest extends TestCase
      */
     private $client;
 
-    public function testThatGetClientUsesExpectedBaseUri(): void
+    public function testThatGetClientUsesExpectedBaseUri()
     {
         /** @var Uri $baseUri */
         $baseUri = $this->client->getClient()->getConfig('base_uri');
@@ -34,7 +34,7 @@ class ClientTest extends TestCase
         static::assertSame('/rest/v2/resource', $baseUri->getPath());
     }
 
-    public function testThatGetOptionsAddsExpectedHeaders(): void
+    public function testThatGetOptionsAddsExpectedHeaders()
     {
         $options = $this->client->getOptions()['headers'];
 

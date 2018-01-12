@@ -17,7 +17,7 @@ use ValueFrame\Rest\Factory;
  */
 class FactoryTest extends TestCase
 {
-    public function testThatClientHasBeenCreatedWithCorrectParameters(): void
+    public function testThatClientHasBeenCreatedWithCorrectParameters()
     {
         $client = Factory::build('customer', 'token', 'resource');
 
