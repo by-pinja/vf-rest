@@ -51,7 +51,33 @@ require 'vendor/autoload.php';
 
 ## Usage
 
-todo
+First of all you should read [official documentation](https://www.valueframe.fi/help/lisapalvelut/rest/) 
+about [ValueFrame](https://www.valueframe.com/) REST API.
+
+Simple usage example:
+
+```php
+<?php
+declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
+$customer = 'asiakas';
+$token = 'siirtoavain';
+$resource = 'tehtavan_kommentti';
+
+$client = \ValueFrame\Rest\Factory::build($customer, $token, $resource);
+
+try {
+    $response = $client->get('');
+
+    \var_dump($response->getStatusCode());
+    \var_dump(\json_decode($response->getBody()->getContents()));
+} catch (\GuzzleHttp\Exception\BadResponseException $exception) {
+    \var_dump($exception->getResponse()->getStatusCode());
+    \var_dump(\json_decode($exception->getResponse()->getBody()->getContents()));
+}
+```
 
 ## Authors
 
