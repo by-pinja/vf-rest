@@ -1,6 +1,9 @@
 # What is this
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Latest Stable Version](https://poser.pugx.org/protacon/vf-rest/v/stable)](https://packagist.org/packages/protacon/vf-rest)
+[![Total Downloads](https://poser.pugx.org/protacon/vf-rest/downloads)](https://packagist.org/packages/protacon/vf-rest)
+[![Latest Unstable Version](https://poser.pugx.org/protacon/vf-rest/v/unstable)](https://packagist.org/packages/protacon/vf-rest)
 
 Simple library for [ValueFrame REST API](https://www.valueframe.fi/help/lisapalvelut/rest/).
 
