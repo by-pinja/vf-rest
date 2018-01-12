@@ -49,6 +49,11 @@ class Client
     private $resource;
 
     /**
+     * @var string
+     */
+    private $baseUri = 'https://psa.valueframe.com/rest/v2/';
+
+    /**
      * @param string $method
      * @param array  $args
      *
@@ -131,12 +136,32 @@ class Client
     }
 
     /**
+     * @return string
+     */
+    public function getBaseUri(): string
+    {
+        return $this->baseUri;
+    }
+
+    /**
+     * @param string|null $baseUri
+     *
+     * @return Client
+     */
+    public function setBaseUri(string $baseUri = null): Client
+    {
+        $this->baseUri = $baseUri ?? $this->baseUri;
+
+        return $this;
+    }
+
+    /**
      * @return GuzzleClient
      */
     public function getClient(): GuzzleClient
     {
         return new GuzzleClient([
-            'base_uri' => 'https://psa.valueframe.com/rest/v2/' . $this->getResource(),
+            'base_uri' =>  $this->getBaseUri() . $this->getResource(),
         ]);
     }
 

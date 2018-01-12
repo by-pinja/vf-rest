@@ -18,18 +18,20 @@ class Factory
     /**
      * Factory method
      *
-     * @param string $customer Customer
-     * @param string $token    Resource token
-     * @param string $resource Rest resource
+     * @param string      $customer Customer
+     * @param string      $token    Resource token
+     * @param string      $resource Rest resource
+     * @param string|null $baseUri
      *
      * @return Client
      */
-    public static function build(string $customer, string $token, string $resource): Client
+    public static function build(string $customer, string $token, string $resource, string $baseUri = null): Client
     {
         $client = (new Client())
             ->setCustomer($customer)
             ->setToken($token)
-            ->setResource($resource);
+            ->setResource($resource)
+            ->setBaseUri($baseUri);
 
         return $client;
     }
