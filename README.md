@@ -2,7 +2,10 @@
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-Simple library for ValueFrame REST API.
+Simple library for [ValueFrame REST API](https://www.valueframe.fi/help/lisapalvelut/rest/).
+
+Basically this is a wrapper for [guzzlehttp/guzzle](http://docs.guzzlephp.org/en/stable/) - this library
+just adds necessary headers to each request.
 
 ## Table of Contents
 
