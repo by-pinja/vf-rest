@@ -126,7 +126,7 @@ by following command:
 ./vendor/bin/phpunit
 ```
 
-Or you could easily configure your IDE to run these for you.
+Or you could easily configure your IDE to run those for you.
 
 ### Metrics
 
