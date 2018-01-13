@@ -21,6 +21,8 @@ just adds necessary headers to each request.
   * [Development](#development)
     * [IDE](#ide)
     * [PHP Code Sniffer](#php-code-sniffer)
+    * [Testing](#testing)
+    * [Metrics](#metrics)
   * [Authors](#authors)
   * [License](#license)
 
@@ -115,6 +117,28 @@ will help you to get things rolling.
 * [Using PHP Code Sniffer Tool](https://www.jetbrains.com/help/phpstorm/10.0/using-php-code-sniffer-tool.html)
 * [PHP Code Sniffer in PhpStorm](https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm)
 
+### Testing
+
+Library uses [PHPUnit](https://phpunit.de/) for testing. You can run all tests
+by following command:
+
+```bash
+./vendor/bin/phpunit
+```
+
+Or you could easily configure your IDE to run these for you.
+
+### Metrics
+
+Library uses
+[PhpMetrics](https://github.com/phpmetrics/phpmetrics)
+to make static analyze of its code. You can run this by following command:
+
+```
+./vendor/bin/phpmetrics --junit=build/logs/junit.xml --report-html=build/phpmetrics .
+```
+
+And after that open `build/phpmetrics/index.html` with your favorite browser.
 
 ## Authors
 
