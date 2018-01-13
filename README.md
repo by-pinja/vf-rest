@@ -18,6 +18,9 @@ just adds necessary headers to each request.
   * [Requirements](#requirements)
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Development](#development)
+    * [IDE](#ide)
+    * [PHP Code Sniffer](#php-code-sniffer)
   * [Authors](#authors)
   * [License](#license)
 
@@ -28,7 +31,7 @@ just adds necessary headers to each request.
 
 ## Installation
 
-The recommended way to install this libarary is with Composer. Composer is a dependency management 
+The recommended way to install this library is with Composer. Composer is a dependency management 
 tool for PHP that allows you to declare the dependencies your project needs and installs them into 
 your project.
 
@@ -37,7 +40,7 @@ your project.
 curl -sS https://getcomposer.org/installer | php
 ```
 
-You can add this library as a dependency using following command:
+You can add this library as a dependency to your project using following command:
 
 ```bash
 composer require protacon/vf-rest
@@ -78,6 +81,40 @@ try {
     \var_dump(\json_decode($exception->getResponse()->getBody()->getContents()));
 }
 ```
+
+## Development
+
+* [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/)
+
+### IDE
+
+I highly recommend that you use "proper"
+[IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
+to development your application. Below is short list of some popular IDEs that
+you could use.
+
+* [PhpStorm](https://www.jetbrains.com/phpstorm/)
+* [NetBeans](https://netbeans.org/)
+* [Sublime Text](https://www.sublimetext.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+
+### PHP Code Sniffer
+
+It's highly recommended that you use this tool while doing actual development
+to application. PHP Code Sniffer is added to project `dev` dependencies, so
+all you need to do is just configure it to your favorite IDE. So the `phpcs`
+command is available via following example command.
+
+```bash
+./vendor/bin/phpcs -i
+```
+
+If you're using [PhpStorm](https://www.jetbrains.com/phpstorm/) following links
+will help you to get things rolling.
+
+* [Using PHP Code Sniffer Tool](https://www.jetbrains.com/help/phpstorm/10.0/using-php-code-sniffer-tool.html)
+* [PHP Code Sniffer in PhpStorm](https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm)
+
 
 ## Authors
 
