@@ -2,8 +2,9 @@
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/protacon/vf-rest.png?branch=master)](https://travis-ci.org/protacon/vf-rest)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/protacon/vf-rest/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/protacon/vf-rest/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/protacon/vf-rest/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/protacon/vf-rest/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/protacon/vf-rest/v/stable)](https://packagist.org/packages/protacon/vf-rest)
-[![Total Downloads](https://poser.pugx.org/protacon/vf-rest/downloads)](https://packagist.org/packages/protacon/vf-rest)
 [![Latest Unstable Version](https://poser.pugx.org/protacon/vf-rest/v/unstable)](https://packagist.org/packages/protacon/vf-rest)
 
 Simple library for [ValueFrame REST API](https://www.valueframe.fi/help/lisapalvelut/rest/).
