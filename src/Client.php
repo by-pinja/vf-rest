@@ -185,9 +185,10 @@ class Client
 
         return [
             'headers' => [
-                'X-VF-REST-USER'      => $this->getCustomer(),
-                'X-VF-REST-TIMESTAMP' => $timestamp,
-                'X-VF-REST-HASH'      => \md5($timestamp . '/' . $resource . '/' . $this->getToken()),
+                'X-VF-REST-USER'             => $this->getCustomer(),
+                'X-VF-REST-TIMESTAMP'        => $timestamp,
+                'X-VF-REST-HASH'             => \md5($timestamp . '/' . $resource . '/' . $this->getToken()),
+                'X-VF-REST-REAL-JSON-OUTPUT' => true,
             ],
         ];
     }
