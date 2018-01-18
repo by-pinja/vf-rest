@@ -1,7 +1,7 @@
 {
 	"name": "protacon/vf-rest",
 	"description": "ValueFrame REST API component",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"type": "library",
 	"license": "MIT",
 	"authors": [
