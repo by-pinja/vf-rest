@@ -172,7 +172,7 @@ class Client
      */
     public function getOptions(array $options = null): array
     {
-        return \array_merge($this->getHeaders(), $options ?? []);
+        return \array_merge_recursive($this->getHeaders(), $options ?? []);
     }
 
     /**
