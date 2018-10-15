@@ -10,7 +10,6 @@ git:
 services:
 
 php:
-  - 7.0
   - 7.1
   - 7.2
   - master
@@ -22,16 +21,13 @@ matrix:
     - php: master
     - php: nightly
   include:
-    - php: 7.0
-      env:
-        - USE_XDEBUG=false
     - php: 7.1
       env:
         - USE_XDEBUG=false
     - php: 7.2
       env:
         - USE_XDEBUG=false
-    - php: 7.0
+    - php: 7.1
       env:
         - COVERAGE=true
 
