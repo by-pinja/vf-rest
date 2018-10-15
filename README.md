@@ -55,6 +55,9 @@ After installing, you need to require Composer's autoloader:
 require 'vendor/autoload.php';
 ```
 
+Note that this is only needed if you're using this library as a stand-alone component - usually 
+your framework (eg. [Symffony](https://www.symfony.com)) is already handling this part for you.
+
 ## Usage
 
 First of all you should read [official documentation](https://www.valueframe.fi/help/lisapalvelut/rest/) 
@@ -66,22 +69,29 @@ Simple usage example:
 <?php
 declare(strict_types=1);
 
+namespace App;
+
+use GuzzleHttp\Exception\BadResponseException;
+use ValueFrame\Rest\Factory as Client;
+use function json_decode;
+use function var_dump;
+
 require __DIR__ . '/vendor/autoload.php';
 
 $customer = 'asiakas';            // X-VF-REST-USER , see docs
 $token    = 'siirtoavain';        // {SIIRTOAVAIN} , see docs
 $resource = 'tehtavan_kommentti'; // {REST_resurssi} , see docs
 
-$client = \ValueFrame\Rest\Factory::build($customer, $token, $resource);
+$client = Client::build($customer, $token, $resource);
 
 try {
     $response = $client->get('');
 
-    \var_dump($response->getStatusCode());
-    \var_dump(\json_decode($response->getBody()->getContents()));
-} catch (\GuzzleHttp\Exception\BadResponseException $exception) {
-    \var_dump($exception->getResponse()->getStatusCode());
-    \var_dump(\json_decode($exception->getResponse()->getBody()->getContents()));
+    var_dump($response->getStatusCode());
+    var_dump(json_decode($response->getBody()->getContents()));
+} catch (BadResponseException $exception) {
+    var_dump($exception->getResponse()->getStatusCode());
+    var_dump(json_decode($exception->getResponse()->getBody()->getContents()));
 }
 ```
 
@@ -91,7 +101,7 @@ try {
 
 ### IDE
 
-I highly recommend that you use "proper"
+We highly recommend that you use "proper"
 [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
 to development your application. Below is short list of some popular IDEs that
 you could use.
