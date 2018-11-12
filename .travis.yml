@@ -10,9 +10,6 @@ git:
 services:
 
 php:
-  - 7.0
-  - 7.1
-  - 7.2
   - master
   - nightly
 
@@ -25,18 +22,19 @@ matrix:
     - php: 7.0
       env:
         - USE_XDEBUG=false
+        - 'HIGHEST_LOWEST="update --prefer-lowest"'
     - php: 7.1
       env:
         - USE_XDEBUG=false
     - php: 7.2
       env:
         - USE_XDEBUG=false
-    - php: 7.0
+    - php: 7.2
       env:
         - COVERAGE=true
 
 install:
-  - composer install
+  - composer -n ${HIGHEST_LOWEST-install} --prefer-dist
 
 before_script:
   - if [[ ${USE_XDEBUG} == false ]]; then phpenv config-rm xdebug.ini; fi
