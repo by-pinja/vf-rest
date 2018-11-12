@@ -56,7 +56,7 @@ require 'vendor/autoload.php';
 ```
 
 Note that this is only needed if you're using this library as a stand-alone component - usually 
-your framework (eg. [Symffony](https://www.symfony.com)) is already handling this part for you.
+your framework (eg. [Symfony](https://www.symfony.com)) is already handling this part for you.
 
 ## Usage
 
