@@ -30,7 +30,7 @@ class ClientTest extends TestCase
         $baseUri = $this->client->getClient()->getConfig('base_uri');
 
         static::assertSame('https', $baseUri->getScheme());
-        static::assertSame('psa.valueframe.com', $baseUri->getHost());
+        static::assertSame('rest.valueframe.com', $baseUri->getHost());
         static::assertSame('/rest/v2/resource', $baseUri->getPath());
     }
 
