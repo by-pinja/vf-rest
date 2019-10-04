@@ -17,7 +17,7 @@ use ValueFrame\Rest\Factory;
  */
 class FactoryTest extends TestCase
 {
-    public function testThatClientHasBeenCreatedWithCorrectParameters()
+    public function testThatClientHasBeenCreatedWithCorrectParameters(): void
     {
         $client = Factory::build('customer', 'token', 'resource');
 
@@ -26,14 +26,14 @@ class FactoryTest extends TestCase
         static::assertSame('resource', $client->getResource());
     }
 
-    public function testThatClientHasDefaultBaseUri()
+    public function testThatClientHasDefaultBaseUri(): void
     {
         $client = Factory::build('customer', 'token', 'resource');
 
         static::assertSame('https://psa.valueframe.com/rest/v2/', $client->getBaseUri());
     }
 
-    public function testThatClientHasCustomBaseUri()
+    public function testThatClientHasCustomBaseUri(): void
     {
         $client = Factory::build('customer', 'token', 'resource', 'custom');
 

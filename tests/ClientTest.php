@@ -24,7 +24,7 @@ class ClientTest extends TestCase
      */
     private $client;
 
-    public function testThatGetClientUsesExpectedBaseUri()
+    public function testThatGetClientUsesExpectedBaseUri(): void
     {
         /** @var Uri $baseUri */
         $baseUri = $this->client->getClient()->getConfig('base_uri');
@@ -34,7 +34,7 @@ class ClientTest extends TestCase
         static::assertSame('/rest/v2/resource', $baseUri->getPath());
     }
 
-    public function testThatGetOptionsAddsExpectedHeaders()
+    public function testThatGetOptionsAddsExpectedHeaders(): void
     {
         $options = $this->client->getOptions()['headers'];
 
@@ -43,7 +43,7 @@ class ClientTest extends TestCase
         static::assertArrayHasKey('X-VF-REST-HASH', $options);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->client = Factory::build('customer', 'token', 'resource');
     }
