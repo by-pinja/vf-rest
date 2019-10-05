@@ -30,7 +30,7 @@ class FactoryTest extends TestCase
     {
         $client = Factory::build('customer', 'token', 'resource');
 
-        static::assertSame('https://psa.valueframe.com/rest/v2/', $client->getBaseUri());
+        static::assertSame('https://rest.valueframe.com/rest/v2/', $client->getBaseUri());
     }
 
     public function testThatClientHasCustomBaseUri(): void

@@ -51,7 +51,7 @@ class Client
     /**
      * @var string
      */
-    private $baseUri = 'https://psa.valueframe.com/rest/v2/';
+    private $baseUri = 'https://rest.valueframe.com/rest/v2/';
 
     /**
      * @param string $method
