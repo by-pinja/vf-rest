@@ -8,7 +8,7 @@
 [![Latest Stable Version](https://poser.pugx.org/protacon/vf-rest/v/stable)](https://packagist.org/packages/protacon/vf-rest)
 [![Latest Unstable Version](https://poser.pugx.org/protacon/vf-rest/v/unstable)](https://packagist.org/packages/protacon/vf-rest)
 
-Simple library for [ValueFrame REST API](https://www.valueframe.fi/help/lisapalvelut/rest/).
+Simple library for [ValueFrame REST API](https://support.valueframe.fi/hc/fi/articles/360007175193-REST-rajapinnan-k%C3%A4ytt%C3%B6).
 
 Basically this is a wrapper for [guzzlehttp/guzzle](http://docs.guzzlephp.org/en/stable/) - this library
 just adds necessary headers to each request.
