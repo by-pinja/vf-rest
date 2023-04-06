@@ -1,0 +1,54 @@
+name: CI
+run-name: ${{ github.actor }} is running CI
+
+# workflow_dispatch allows you to run this workflow manually from the Actions tab
+on: [ pull_request, workflow_dispatch ]
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: 'ubuntu-20.04'
+    strategy:
+      matrix:
+        include:
+          - php-versions: '8.2'
+            phpunit-versions: '9.6'
+          - php-versions: '8.2'
+            phpunit-versions: '10.0'
+          - php-versions: '8.2'
+            phpunit-versions: 'latest'
+          - php-versions: '8.1'
+            phpunit-versions: '9.6'
+          - php-versions: '8.1'
+            phpunit-versions: '10.0'
+          - php-versions: '8.1'
+            phpunit-versions: 'latest'
+          - php-versions: '8.0'
+            phpunit-versions: '9.6'
+          - php-versions: '7.4'
+            phpunit-versions: '9.6'
+          - php-versions: '7.3'
+            phpunit-versions: '9.6'
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, intl
+          ini-values: post_max_size=256M, max_execution_time=180
+          coverage: xdebug
+          tools: phpunit:${{ matrix.phpunit-versions }}
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install composer dependencies
+        run: composer install --no-scripts --no-interaction
+
+      - name: PHPUnit tests
+        run: ./vendor/bin/phpunit
