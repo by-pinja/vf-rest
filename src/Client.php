@@ -3,7 +3,7 @@ declare(strict_types = 1);
 /**
  * /src/Client.php
  *
- * @author  TLe, Tarmo Leppänen <tarmo.leppanen@protacon.com>
+ * @author  TLe, Tarmo Leppänen <tarmo.leppanen@pinja.com>
  */
 namespace ValueFrame\Rest;
 
@@ -30,7 +30,7 @@ use Psr\Http\Message\UriInterface;
  * @method Promise\PromiseInterface deleteAsync(string|UriInterface $uri, array $options = [])
  *
  * @package ValueFrame\Rest
- * @author  TLe, Tarmo Leppänen <tarmo.leppanen@protacon.com>
+ * @author  TLe, Tarmo Leppänen <tarmo.leppanen@pinja.com>
  */
 class Client
 {

@@ -1,14 +1,11 @@
 # What is this
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Build Status](https://travis-ci.org/protacon/vf-rest.png?branch=master)](https://travis-ci.org/protacon/vf-rest)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/protacon/vf-rest/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/protacon/vf-rest/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/protacon/vf-rest/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/protacon/vf-rest/?branch=master)
 [![Total Downloads](https://poser.pugx.org/protacon/vf-rest/downloads)](https://packagist.org/packages/protacon/vf-rest)
 [![Latest Stable Version](https://poser.pugx.org/protacon/vf-rest/v/stable)](https://packagist.org/packages/protacon/vf-rest)
 [![Latest Unstable Version](https://poser.pugx.org/protacon/vf-rest/v/unstable)](https://packagist.org/packages/protacon/vf-rest)
 
-Simple library for [ValueFrame REST API](https://support.valueframe.fi/hc/fi/articles/360007175193-REST-rajapinnan-k%C3%A4ytt%C3%B6).
+Simple library for [ValueFrame REST API](https://support.valueframe.fi/support/solutions/articles/77000527771-rest-rajapinnan-k%C3%A4ytt%C3%B6).
 
 Basically this is a wrapper for [guzzlehttp/guzzle](http://docs.guzzlephp.org/en/stable/) - this library
 just adds necessary headers to each request.
@@ -160,4 +157,4 @@ And after that open `build/phpmetrics/index.html` with your favorite browser.
 
 [The MIT License (MIT)](LICENSE)
 
-Copyright (c) 2018 Protacon
+Copyright (c) 2018 Pinja
