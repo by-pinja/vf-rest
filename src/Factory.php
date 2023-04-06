@@ -3,7 +3,7 @@ declare(strict_types = 1);
 /**
  * /src/Factory.php
  *
- * @author  TLe, Tarmo Leppänen <tarmo.leppanen@protacon.com>
+ * @author  TLe, Tarmo Leppänen <tarmo.leppanen@pinja.com>
  */
 namespace ValueFrame\Rest;
 
@@ -11,7 +11,7 @@ namespace ValueFrame\Rest;
  * Class Factory
  *
  * @package ValueFrame\Rest
- * @author  TLe, Tarmo Leppänen <tarmo.leppanen@protacon.com>
+ * @author  TLe, Tarmo Leppänen <tarmo.leppanen@pinja.com>
  */
 class Factory
 {
