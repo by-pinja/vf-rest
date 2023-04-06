@@ -9,6 +9,7 @@ namespace ValueFrame\Rest;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Promise;
+use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
@@ -57,14 +58,14 @@ class Client
      * @param string $method
      * @param array  $args
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface|mixed|ResponseInterface
+     * @return \GuzzleHttp\Promise\PromiseInterface|ResponseInterface
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException|\GuzzleHttp\Exception\GuzzleException
      */
     public function __call(string $method, array $args)
     {
         if (count($args) < 1) {
-            throw new \InvalidArgumentException('Magic request methods require a URI and optional options array');
+            throw new InvalidArgumentException('Magic request methods require a URI and optional options array');
         }
 
         $uri = $args[0];
@@ -172,7 +173,7 @@ class Client
      */
     public function getOptions(array $options = null): array
     {
-        return \array_merge_recursive($this->getHeaders(), $options ?? []);
+        return array_merge_recursive($this->getHeaders(), $options ?? []);
     }
 
     /**
@@ -180,14 +181,14 @@ class Client
      */
     private function getHeaders(): array
     {
-        $timestamp = \time();
-        $resource = \trim($this->getResource(), '/');
+        $timestamp = time();
+        $resource = trim($this->getResource(), '/');
 
         return [
             'headers' => [
                 'X-VF-REST-USER'             => $this->getCustomer(),
                 'X-VF-REST-TIMESTAMP'        => $timestamp,
-                'X-VF-REST-HASH'             => \md5($timestamp . '/' . $resource . '/' . $this->getToken()),
+                'X-VF-REST-HASH'             => md5($timestamp . '/' . $resource . '/' . $this->getToken()),
                 'X-VF-REST-REAL-JSON-OUTPUT' => true,
             ],
         ];
