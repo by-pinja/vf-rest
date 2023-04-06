@@ -4,3 +4,4 @@ composer.phar
 composer.lock
 composer-test.lock
 vendor/
+/.phpunit.result.cache
