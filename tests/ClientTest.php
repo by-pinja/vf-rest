@@ -24,28 +24,27 @@ class ClientTest extends TestCase
      */
     private $client;
 
-    public function testThatGetClientUsesExpectedBaseUri()
+    public function testThatGetClientUsesExpectedBaseUri(): void
     {
         /** @var Uri $baseUri */
         $baseUri = $this->client->getClient()->getConfig('base_uri');
 
-        static::assertSame('https', $baseUri->getScheme());
-        static::assertSame('rest.valueframe.com', $baseUri->getHost());
-        static::assertSame('/rest/v2/resource', $baseUri->getPath());
+        $this->assertSame('https', $baseUri->getScheme());
+        $this->assertSame('rest.valueframe.com', $baseUri->getHost());
+        $this->assertSame('/rest/v2/resource', $baseUri->getPath());
     }
 
-    public function testThatGetOptionsAddsExpectedHeaders()
+    public function testThatGetOptionsAddsExpectedHeaders(): void
     {
         $options = $this->client->getOptions()['headers'];
 
-        static::assertArrayHasKey('X-VF-REST-USER', $options);
-        static::assertArrayHasKey('X-VF-REST-TIMESTAMP', $options);
-        static::assertArrayHasKey('X-VF-REST-HASH', $options);
+        $this->assertArrayHasKey('X-VF-REST-USER', $options);
+        $this->assertArrayHasKey('X-VF-REST-TIMESTAMP', $options);
+        $this->assertArrayHasKey('X-VF-REST-HASH', $options);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->client = Factory::build('customer', 'token', 'resource');
     }
 }
-

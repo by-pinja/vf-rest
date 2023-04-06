@@ -27,12 +27,10 @@ class Factory
      */
     public static function build(string $customer, string $token, string $resource, string $baseUri = null): Client
     {
-        $client = (new Client())
+        return (new Client())
             ->setCustomer($customer)
             ->setToken($token)
             ->setResource($resource)
             ->setBaseUri($baseUri);
-
-        return $client;
     }
 }
