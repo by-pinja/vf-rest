@@ -27,7 +27,7 @@ just adds necessary headers to each request.
 
 ## Requirements
 
-* PHP 7.0 or higher
+* PHP 7.3 or higher
 * [Composer](https://getcomposer.org/)
 
 ## Installation
